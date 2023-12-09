@@ -1,6 +1,8 @@
 The Thermal Energy Algorithms Library (TEAL)
 =====
 
+![Green-winged Teal](https://en.wikipedia.org/wiki/Teal#/media/File:Green-winged_Teal,_Port_Aransas,_Texas.jpg)
+
 **NOTE**: This project is very early in development. 
 
 # Getting Started 
@@ -80,6 +82,13 @@ This repo has a pre-commit style code formatting requirement. You cannot commit 
 ```
 git clang-format
 ```
+
+# More Information on Methods and Solvers
+
+This project is a spin-off of a project called [CATS](https://github.com/aladshaw3/cats) (Catalysis and Treatment Simulations). 
+You can visit the CATS GitHub page for more detailed technical information on how to use MOOSE-based applications. 
+
+Solver options and kernel mathematically details are available in the [CATS User Guide](https://github.com/aladshaw3/cats/blob/master/CATS-UserGuide-09172022.pdf).
 
 # More MOOSE Information
 
