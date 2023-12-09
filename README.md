@@ -1,7 +1,9 @@
-The Thermal Energy Algorithms Library (TEAL)
-=====
+**Image**: Green-winged Teal in flight
 
-<img src="teal-image.jpg" height="150"> Image: Green-winged Teal in flight
+<img src="teal-image.jpg" height="200"> 
+
+Thermal Energy Algorithms Library (TEAL)
+=====
 
 **NOTE**: This project is very early in development. 
 
