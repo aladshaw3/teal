@@ -73,6 +73,14 @@ make -j4
 **NOTE**: All MOOSE-based applications must be built with the MOOSE conda environment active 
 
 
+# Committing Code 
+
+This repo has a pre-commit style code formatting requirement. You cannot commit without first running:
+
+```
+git clang-format
+```
+
 # More MOOSE Information
 
 Fork "teal" to create a new MOOSE-based application.
