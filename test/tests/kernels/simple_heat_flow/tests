@@ -1,0 +1,8 @@
+[Tests]
+  [./test]
+    type = 'Exodiff'
+    input = 'simple_heat_flow.i'
+    exodiff = 'simple_heat_flow_out.e'
+    requirement = 'The system shall be able to solve an integrated heat flow system.'
+  [../]
+[]
