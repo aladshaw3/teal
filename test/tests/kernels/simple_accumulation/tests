@@ -1,0 +1,8 @@
+[Tests]
+  [./test]
+    type = 'Exodiff'
+    input = 'simple_accumulation.i'
+    exodiff = 'simple_accumulation_out.e'
+    requirement = 'The system shall be able to solve a linear heat accumulation problem.'
+  [../]
+[]

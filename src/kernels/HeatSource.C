@@ -35,7 +35,7 @@ HeatSource::HeatSource(const InputParameters & parameters)
 Real
 HeatSource::computeQpResidual()
 {
-  return _test[_i][_qp] * _coupled_source[_qp];
+  return -_test[_i][_qp] * _coupled_source[_qp];
 }
 
 Real
