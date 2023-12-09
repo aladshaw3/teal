@@ -1,7 +1,7 @@
 The Thermal Energy Algorithms Library (TEAL)
 =====
 
-![Green-winged Teal](https://upload.wikimedia.org/wikipedia/commons/0/07/Green-winged_Teal%2C_Port_Aransas%2C_Texas.jpg)
+![Green-winged Teal](teal-image.jpg)
 
 **NOTE**: This project is very early in development. 
 
