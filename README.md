@@ -1,5 +1,79 @@
-teal
+The Thermal Energy Algorithms Library (TEAL)
 =====
+
+**NOTE**: This project is very early in development. 
+
+# Getting Started 
+
+TEAL is a MOOSE-based application. Users will need to first follow the MOOSE installation instructions
+[here](https://mooseframework.inl.gov/getting_started/installation/index.html). 
+
+## Basic MOOSE instructions 
+
+ - Basic Instructions for the moose conda/mamba environment 
+ 
+```
+mamba init
+exit
+```
+**NOTE**: You will need to exit a terminal to initialize conda/mamba
+
+```
+conda config --add channels https://conda.software.inl.gov/public
+mamba create -n moose moose-dev
+mamba activate moose
+```
+
+ - Basic Instructions for keeping moose environment updated 
+ 
+```
+mamba update --all
+```
+
+ - Basic Instructions for cloning, building, and testing MOOSE
+ 
+You should clone MOOSE into a `~/projects` directory and place all MOOSE apps in that same directory. 
+
+```
+cd ~/projects
+git clone https://github.com/idaholab/moose.git
+cd moose 
+git checkout master
+cd ~/projects/moose/test
+make -j4
+./run_tests -j4
+```
+
+**NOTE**: All MOOSE tests and framework modules must be built with the MOOSE conda environment active 
+
+## Basic TEAL instructions
+
+Once MOOSE is installed and tested, clone this repository into the `projects` directory. 
+
+```
+cd ~/projects
+git clone https://github.com/aladshaw3/teal.git
+```
+
+OR
+
+```
+cd ~/projects
+git clone git@github.com:aladshaw3/teal.git
+```
+
+After you have cloned the project, go into the `teal` directory to build the library from source.
+
+```
+cd ~/projects/teal
+make -j4
+./run_tests -j4
+```
+
+**NOTE**: All MOOSE-based applications must be built with the MOOSE conda environment active 
+
+
+# More MOOSE Information
 
 Fork "teal" to create a new MOOSE-based application.
 
