@@ -1,7 +1,7 @@
 The Thermal Energy Algorithms Library (TEAL)
 =====
 
-<img src="teal-image.jpg"  width="600" height="300">
+<img src="teal-image.jpg" height="150">
 
 ![Green-winged Teal](teal-image.jpg)
 
