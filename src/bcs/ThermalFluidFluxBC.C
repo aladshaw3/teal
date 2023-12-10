@@ -164,5 +164,72 @@ ThermalFluidFluxBC::computeQpOffDiagJacobian(unsigned int jvar)
     return r;
   }
 
+  if (jvar == _density_var)
+  {
+    // Output
+    if ((_vec)*_normals[_qp] > 0.0)
+    {
+      r += _test[_i][_qp] * (_vec * _normals[_qp]) * _u[_qp] * _phi[_j][_qp] * _heat_cap[_qp] *
+           _volfrac[_qp];
+    }
+    // Input
+    else
+    {
+      r += _test[_i][_qp] * (_vec * _normals[_qp]) * _outside_temp[_qp] * _phi[_j][_qp] *
+           _heat_cap[_qp] * _volfrac[_qp];
+    }
+    return r;
+  }
+
+  if (jvar == _heat_cap_var)
+  {
+    // Output
+    if ((_vec)*_normals[_qp] > 0.0)
+    {
+      r += _test[_i][_qp] * (_vec * _normals[_qp]) * _u[_qp] * _density[_qp] * _phi[_j][_qp] *
+           _volfrac[_qp];
+    }
+    // Input
+    else
+    {
+      r += _test[_i][_qp] * (_vec * _normals[_qp]) * _outside_temp[_qp] * _density[_qp] *
+           _phi[_j][_qp] * _volfrac[_qp];
+    }
+    return r;
+  }
+
+  if (jvar == _volfrac_var)
+  {
+    // Output
+    if ((_vec)*_normals[_qp] > 0.0)
+    {
+      r += _test[_i][_qp] * (_vec * _normals[_qp]) * _u[_qp] * _density[_qp] * _heat_cap[_qp] *
+           _phi[_j][_qp];
+    }
+    // Input
+    else
+    {
+      r += _test[_i][_qp] * (_vec * _normals[_qp]) * _outside_temp[_qp] * _density[_qp] *
+           _heat_cap[_qp] * _phi[_j][_qp];
+    }
+    return r;
+  }
+
+  if (jvar == _outside_temp_var)
+  {
+    // Output
+    if ((_vec)*_normals[_qp] > 0.0)
+    {
+      r += 0.0;
+    }
+    // Input
+    else
+    {
+      r += _test[_i][_qp] * (_vec * _normals[_qp]) * _phi[_j][_qp] * _density[_qp] *
+           _heat_cap[_qp] * _volfrac[_qp];
+    }
+    return r;
+  }
+
   return 0.0;
 }
