@@ -1,0 +1,14 @@
+[Tests]
+  [./test_no_upwind]
+    type = 'Exodiff'
+    input = 'no_upwinding.i'
+    exodiff = 'no_upwinding_out.e'
+    requirement = 'The system shall be able to solve a thermal fluid dynamics without needing an upwinding scheme.'
+  [../]
+  [./test_full_upwind]
+    type = 'Exodiff'
+    input = 'full_upwinding.i'
+    exodiff = 'full_upwinding_out.e'
+    requirement = 'The system shall be able to solve and stabilize a thermal fluid dynamics using an upwinding scheme.'
+  [../]
+[]
