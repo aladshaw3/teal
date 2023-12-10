@@ -2,6 +2,11 @@
 
 <img src="teal-image.jpg" height="200"> 
 
+## Build Status
+
+[![Checks](https://github.com/aladshaw3/teal/actions/workflows/conda-build.yml/badge.svg)](https://github.com/aladshaw3/teal/actions/workflows/conda-build.yml)
+[![Checks2](https://github.com/aladshaw3/teal/actions/workflows/personal-conda-build.yml/badge.svg)](https://github.com/aladshaw3/teal/actions/workflows/personal-conda-build.yml)
+
 Thermal Energy Algorithms Library (TEAL)
 =====
 

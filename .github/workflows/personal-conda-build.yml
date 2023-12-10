@@ -1,0 +1,54 @@
+name: Fork Build
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  schedule:
+    - cron: '30 5 * * 5'
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Activate MOOSE environment
+      uses: conda-incubator/setup-miniconda@main
+      with:
+        python-version: '3.10'
+        mamba-version: "*"
+        channels: https://conda.software.inl.gov/public,conda-forge,defaults
+        channel-priority: true
+        miniforge-variant: Mambaforge
+        miniforge-version: latest
+        activate-environment: moose
+    - name: Install dependencies
+      shell: bash -l {0}
+      run: |
+        mamba init
+        conda activate moose
+        mamba install moose-dev
+    - name: Install MOOSE
+      shell: bash -l {0}
+      run: |
+        cd ..
+        git clone https://github.com/aladshaw3/moose.git
+        cd moose
+        git checkout master
+        conda activate moose
+        cd test
+        make -j4
+    - name: Build TEAL
+      shell: bash -l {0}
+      run: |
+        conda activate moose
+        make -j4
+    - name: Run TEAL Tests
+      shell: bash -l {0}
+      run: |
+        conda activate moose
+        ./run_tests -j4
